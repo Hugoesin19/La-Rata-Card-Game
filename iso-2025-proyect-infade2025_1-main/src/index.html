@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Rata - Pantalla de Bienvenida</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <div id="user-profile-widget">
+        <img id="profile-avatar" src="assets/avatars/default.png" alt="Avatar del Jugador">
+        <span id="profile-username">Jugador Invitado</span>
+    </div>
+
+    <div id="welcome-container">
+        <div id="logo-section">
+            <img id="game-logo" src="assets/logo_juego.png" alt="Logo La Rata">
+        </div>
+
+        <div id="buttons-section">
+            <button class="menu-button">JUGAR</button>
+            <button class="menu-button" id="lobby-btn">LOBBY</button>
+
+            <button class="menu-button" id="config-btn">PERFIL</button>
+
+            <button class="menu-button" id="options-btn">OPCIONES</button>
+        </div>
+    </div>
+
+    <div id="options-modal" class="hidden">
+        <h3>OPCIONES</h3>
+        <div id="options-content">
+            <label for="volume-slider">SONIDO GENERAL</label>
+            <input type="range" id="volume-slider" min="0" max="100" value="75">
+            <div class="checkbox-fila">
+                <input type="checkbox" id="music-toggle" checked>
+                <label for="music-toggle">Música</label>
+            </div>
+            <div class="checkbox-fila">
+                <input type="checkbox" id="fx-toggle" checked>
+                <label for="fx-toggle">Efectos (FX)</label>
+            </div>
+        </div>
+        <button class="menu-button" id="close-options-btn">CERRAR</button>
+    </div>
+
+
+    <div id="config-modal" class="hidden">
+        <h3>CONFIGURACIÓN DE PERFIL</h3>
+
+        <div id="config-content">
+            <h4>ELIGE TU AVATAR</h4>
+
+            <div id="avatar-selector">
+            </div>
+
+            <div id="current-profile-display">
+                <img id="current-avatar-preview" src="assets/characters/char_1.png" alt="Avatar Actual">
+                <span id="current-username-display">Jugador Invitado</span>
+            </div>
+        </div>
+
+        <button class="menu-button" id="close-config-btn">HECHO</button>
+    </div>
+
+
+    <div id="lobby-modal" class="hidden">
+        <h3>LOBBY</h3>
+
+        <div id="lobby-content">
+
+            <div class="lobby-column" id="lobby-create">
+                <h4>CREAR PARTIDA</h4>
+                <img id="lobby-rat-img" src="assets/Lobby_rat_red.png" alt="Rata del Lobby">
+
+                <div class="lobby-content-box">
+                    <div id="lobby-code-display" class="hidden">
+                        CÓDIGO: <span id="lobby-code-text"></span>
+                    </div>
+                </div>
+
+                <button class="menu-button" id="create-game-btn">CREAR</button>
+            </div>
+
+            <div class="lobby-column" id="lobby-join">
+                <h4>UNIRSE A PARTIDA</h4>
+                <img id="lobby-rat-img-join" src="assets/Lobby_rat_blue.png" alt="Rata del Lobby">
+
+                <div class="lobby-content-box">
+                    <label for="lobby-code-input">INTRODUCE CÓDIGO:</label>
+                    <input type="text" id="lobby-code-input" maxlength="5">
+                </div>
+
+                <button class="menu-button" id="join-game-btn">UNIRSE</button>
+            </div>
+
+        </div>
+
+        <button class="menu-button" id="close-lobby-btn">VOLVER</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

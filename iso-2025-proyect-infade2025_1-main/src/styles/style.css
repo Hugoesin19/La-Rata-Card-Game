@@ -1,0 +1,438 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url('../assets/fonts/PixelFont.ttf');
+}
+
+:root {
+    --tavern-dark: #3a2a1a;
+    --tavern-wood: #6d4f2f;
+    --tavern-highlight: #e0c9a6;
+    --tavern-accent: #d3b279;
+    --tavern-gold: #d4a24e;
+}
+
+body {
+    background-image: url('../assets/fondo_index.png');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--tavern-dark);
+    margin: 0;
+    font-family: 'PixelFont', monospace;
+    color: var(--tavern-highlight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#welcome-container {
+    max-width: 600px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5vh;
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#logo-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+#game-logo {
+    max-width: 40%;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+#buttons-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    min-width: 200px;
+}
+
+.menu-button {
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    font-family: inherit;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    font-weight: normal;
+    color: var(--tavern-highlight);
+    background-color: var(--tavern-wood);
+    border: 3px solid var(--tavern-dark);
+    cursor: pointer;
+    background-image: none;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+    text-shadow: 2px 2px var(--tavern-dark);
+    box-shadow: 5px 5px 0px 0px var(--tavern-dark);
+}
+
+.menu-button:hover {
+    background-color: var(--tavern-gold);
+    color: var(--tavern-dark);
+    border-color: var(--tavern-dark);
+    text-shadow: 2px 2px var(--tavern-accent);
+    box-shadow: 5px 5px 0px 0px var(--tavern-accent);
+}
+
+.menu-button:active {
+    box-shadow: 0 0 0px 0px var(--tavern-dark);
+    transform: translate(5px, 5px);
+}
+
+.hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+#logo-section,
+#buttons-section {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#logo-section.hidden,
+#buttons-section.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- WIDGET DE PERFIL --- */
+#user-profile-widget {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    background-color: var(--tavern-dark);
+    border: 3px solid var(--tavern-gold);
+    box-shadow: 3px 3px 0px 0px var(--tavern-wood);
+}
+
+#profile-avatar {
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--tavern-highlight);
+    image-rendering: pixelated;
+    object-fit: cover;
+}
+
+#profile-username {
+    color: var(--tavern-gold);
+    font-size: 1.5em;
+    text-shadow: 1px 1px var(--tavern-dark);
+}
+
+/* --- MODAL DE OPCIONES --- */
+#options-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    width: 300px;
+    z-index: 10;
+    background-color: var(--tavern-wood);
+    border: 3px solid var(--tavern-gold);
+    box-shadow: 5px 5px 0px 0px var(--tavern-dark);
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#options-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -45%);
+}
+
+#options-modal h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--tavern-highlight);
+    text-shadow: 2px 2px var(--tavern-dark);
+}
+
+#options-content label {
+    font-size: 1.1em;
+    color: var(--tavern-highlight);
+    text-shadow: 1px 1px var(--tavern-dark);
+    margin: 0;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: var(--tavern-dark);
+    border: 3px solid var(--tavern-gold);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-top: -8px;
+    background: var(--tavern-highlight);
+    border: 3px solid var(--tavern-dark);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--tavern-highlight);
+    border: 3px solid var(--tavern-dark);
+    border-radius: 0;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    background: var(--tavern-dark);
+    border: 3px solid var(--tavern-gold);
+    box-shadow: 3px 3px 0 0 var(--tavern-dark);
+}
+
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 11px;
+    border: solid var(--tavern-highlight);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+#options-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.checkbox-fila {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- MODAL DE CONFIGURACIÓN --- */
+#config-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    width: 600px;
+    z-index: 10;
+    background-color: var(--tavern-wood);
+    border: 3px solid var(--tavern-gold);
+    box-shadow: 5px 5px 0px 0px var(--tavern-dark);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#config-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -45%);
+}
+
+#config-modal h4 {
+    color: var(--tavern-highlight);
+    text-shadow: 1px 1px var(--tavern-dark);
+    margin: 0;
+}
+
+#avatar-selector {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 550px;
+    background-color: var(--tavern-dark);
+    padding: 10px;
+    border: 3px solid var(--tavern-gold);
+}
+
+.avatar-option {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    image-rendering: pixelated;
+    object-fit: cover;
+    transition: border-color 0.1s;
+}
+
+.avatar-option:hover {
+    border-color: var(--tavern-gold);
+}
+
+.avatar-option.selected {
+    border-color: var(--tavern-highlight);
+    box-shadow: 0 0 5px var(--tavern-highlight);
+}
+
+#current-profile-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border: 2px dashed var(--tavern-accent);
+}
+
+#current-avatar-preview {
+    width: 140px;
+    height: 140px;
+    image-rendering: pixelated;
+    object-fit: cover;
+}
+
+#current-username-display {
+    color: var(--tavern-highlight);
+    font-size: 1.5em;
+    text-shadow: 1px 1px var(--tavern-dark);
+}
+
+
+/* --- MODAL DE LOBBY --- */
+#lobby-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    width: 600px;
+    z-index: 10;
+    background-color: var(--tavern-wood);
+    border: 3px solid var(--tavern-gold);
+    box-shadow: 5px 5px 0px 0px var(--tavern-dark);
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#lobby-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -45%);
+}
+
+#lobby-modal h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--tavern-highlight);
+    text-shadow: 2px 2px var(--tavern-dark);
+}
+
+#lobby-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.lobby-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 3px solid var(--tavern-gold);
+    padding: 20px;
+    background-color: var(--tavern-dark);
+}
+
+.lobby-column h4 {
+    margin: 0;
+    font-size: 1.2em;
+    color: var(--tavern-gold);
+    text-shadow: 2px 2px #000;
+}
+
+.lobby-column label {
+    font-size: 1.1em;
+    color: var(--tavern-highlight);
+    text-shadow: 1px 1px var(--tavern-dark);
+    margin: 0;
+}
+
+#lobby-code-input {
+    font-family: 'PixelFont', monospace;
+    font-size: 1.8em;
+    color: var(--tavern-highlight);
+    background-color: var(--tavern-dark);
+    border: 3px solid var(--tavern-gold);
+    width: 90%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#lobby-code-display {
+    font-size: 1.5em;
+    color: var(--tavern-gold);
+    background-color: var(--tavern-dark);
+    padding: 10px;
+    border: 3px dashed var(--tavern-gold);
+    letter-spacing: 2px;
+}
+
+#lobby-rat-img,
+#lobby-rat-img-join {
+    width: 200px;
+    height: 200px;
+    image-rendering: pixelated;
+    filter: drop-shadow(3px 3px 0px var(--tavern-dark));
+    margin-bottom: 10px;
+}
+
+.lobby-content-box {
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lobby-column .menu-button {
+    margin-top: auto;
+    width: 100%;
+}

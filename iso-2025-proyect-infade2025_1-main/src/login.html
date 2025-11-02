@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Rata - Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles/auth.css">
+</head>
+
+<body>
+
+    <div id="welcome-container">
+
+        <div id="logo-section">
+            <img id="game-logo" src="assets/logo_juego.png" alt="Logo La Rata">
+        </div>
+
+        <div id="auth-container">
+
+            <div id="login-form">
+                <h3>INICIAR SESIÓN</h3>
+
+                <label for="login-user">Usuario:</label>
+                <input type="text" id="login-user" autocomplete="username">
+
+                <label for="login-pass">Contraseña:</label>
+                <input type="password" id="login-pass" autocomplete="current-password">
+
+                <button class="menu-button" id="login-btn">ENTRAR</button>
+
+                <p class="toggle-link">¿No tienes cuenta? <a href="#" id="to-register-link">Regístrate</a></p>
+            </div>
+
+            <div id="register-form" class="hidden">
+                <h3>REGISTRO</h3>
+
+                <label for="register-user">Usuario:</label>
+                <input type="text" id="register-user" autocomplete="username">
+
+                <label for="register-pass">Contraseña:</label>
+                <input type="password" id="register-pass" autocomplete="new-password">
+
+                <label for="register-pass2">Repetir Contraseña:</label>
+                <input type="password" id="register-pass2" autocomplete="new-password">
+
+                <button class="menu-button" id="register-btn">CREAR CUENTA</button>
+
+                <p class="toggle-link">¿Ya tienes cuenta? <a href="#" id="to-login-link">Inicia sesión</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'PixelFont';
+    src: url('../assets/fonts/PixelFont.ttf');
+}
+
+:root {
+    --tavern-dark: #3a2a1a;
+    --tavern-wood: #6d4f2f;
+    --tavern-highlight: #e0c9a6;
+    --tavern-accent: #d3b279;
+    --tavern-gold: #d4a24e;
+}
+
+body {
+    background-image: url('../assets/fondo_index.png');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--tavern-dark);
+    margin: 0;
+    font-family: 'PixelFont', monospace;
+    color: var(--tavern-highlight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+}
+
+#welcome-container {
+    max-width: 600px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -5vh;
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#logo-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+#game-logo {
+    max-width: 40%;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+#auth-container {
+    width: 400px;
+    padding: 30px;
+    background-color: var(--tavern-wood);
+    border: 3px solid var(--tavern-gold);
+    box-shadow: 5px 5px 0px 0px var(--tavern-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#login-form,
+#register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#auth-container h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--tavern-highlight);
+    text-shadow: 2px 2px var(--tavern-dark);
+    text-align: center;
+}
+
+#auth-container label {
+    font-size: 1.1em;
+    text-shadow: 1px 1px var(--tavern-dark);
+    margin-bottom: -10px;
+}
+
+#auth-container input[type="text"],
+#auth-container input[type="password"] {
+    font-family: 'PixelFont', monospace;
+    font-size: 1.2em;
+    color: var(--tavern-highlight);
+    background-color: var(--tavern-dark);
+    border: 3px solid var(--tavern-gold);
+    padding: 10px;
+}
+
+#auth-container .menu-button {
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    font-family: inherit;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    font-weight: normal;
+
+    color: var(--tavern-highlight);
+    background-color: var(--tavern-dark);
+    border: 3px solid var(--tavern-gold);
+    cursor: pointer;
+    text-shadow: 2px 2px var(--tavern-dark);
+    box-shadow: 5px 5px 0px 0px var(--tavern-dark);
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+#auth-container .menu-button:hover {
+    background-color: var(--tavern-gold);
+    color: var(--tavern-dark);
+    text-shadow: 2px 2px var(--tavern-accent);
+    box-shadow: 5px 5px 0px 0px var(--tavern-accent);
+}
+
+#auth-container .menu-button:active {
+    box-shadow: 0 0 0px 0px var(--tavern-dark);
+    transform: translate(5px, 5px);
+}
+
+.toggle-link {
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0;
+}
+
+.toggle-link a {
+    color: var(--tavern-gold);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
